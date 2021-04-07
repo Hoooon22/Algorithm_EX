@@ -1,0 +1,16 @@
+C:\Users\momo9\source\repos\Hoooon22\Algorithm_EX\2021_04\07_StringBasic\bin\Debug\net5.0\07_StringBasic.exe
+C:\Users\momo9\source\repos\Hoooon22\Algorithm_EX\2021_04\07_StringBasic\bin\Debug\net5.0\07_StringBasic.deps.json
+C:\Users\momo9\source\repos\Hoooon22\Algorithm_EX\2021_04\07_StringBasic\bin\Debug\net5.0\07_StringBasic.runtimeconfig.json
+C:\Users\momo9\source\repos\Hoooon22\Algorithm_EX\2021_04\07_StringBasic\bin\Debug\net5.0\07_StringBasic.runtimeconfig.dev.json
+C:\Users\momo9\source\repos\Hoooon22\Algorithm_EX\2021_04\07_StringBasic\bin\Debug\net5.0\07_StringBasic.dll
+C:\Users\momo9\source\repos\Hoooon22\Algorithm_EX\2021_04\07_StringBasic\bin\Debug\net5.0\ref\07_StringBasic.dll
+C:\Users\momo9\source\repos\Hoooon22\Algorithm_EX\2021_04\07_StringBasic\bin\Debug\net5.0\07_StringBasic.pdb
+C:\Users\momo9\source\repos\Hoooon22\Algorithm_EX\2021_04\07_StringBasic\obj\Debug\net5.0\07_StringBasic.csprojAssemblyReference.cache
+C:\Users\momo9\source\repos\Hoooon22\Algorithm_EX\2021_04\07_StringBasic\obj\Debug\net5.0\07_StringBasic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\momo9\source\repos\Hoooon22\Algorithm_EX\2021_04\07_StringBasic\obj\Debug\net5.0\07_StringBasic.AssemblyInfoInputs.cache
+C:\Users\momo9\source\repos\Hoooon22\Algorithm_EX\2021_04\07_StringBasic\obj\Debug\net5.0\07_StringBasic.AssemblyInfo.cs
+C:\Users\momo9\source\repos\Hoooon22\Algorithm_EX\2021_04\07_StringBasic\obj\Debug\net5.0\07_StringBasic.csproj.CoreCompileInputs.cache
+C:\Users\momo9\source\repos\Hoooon22\Algorithm_EX\2021_04\07_StringBasic\obj\Debug\net5.0\07_StringBasic.dll
+C:\Users\momo9\source\repos\Hoooon22\Algorithm_EX\2021_04\07_StringBasic\obj\Debug\net5.0\ref\07_StringBasic.dll
+C:\Users\momo9\source\repos\Hoooon22\Algorithm_EX\2021_04\07_StringBasic\obj\Debug\net5.0\07_StringBasic.pdb
+C:\Users\momo9\source\repos\Hoooon22\Algorithm_EX\2021_04\07_StringBasic\obj\Debug\net5.0\07_StringBasic.genruntimeconfig.cache
