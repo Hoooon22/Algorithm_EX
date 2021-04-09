@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\momo9\\source\\repos\\Hoooon22\\Algorithm_EX\\2021_04\\07_StringBasic\\07_StringBasic.csproj": {}
+    "C:\\Users\\jihoon\\source\\repos\\Hoooon22\\Algorithm_EX\\2021_04\\07_StringBasic\\07_StringBasic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\momo9\\source\\repos\\Hoooon22\\Algorithm_EX\\2021_04\\07_StringBasic\\07_StringBasic.csproj": {
+    "C:\\Users\\jihoon\\source\\repos\\Hoooon22\\Algorithm_EX\\2021_04\\07_StringBasic\\07_StringBasic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\momo9\\source\\repos\\Hoooon22\\Algorithm_EX\\2021_04\\07_StringBasic\\07_StringBasic.csproj",
+        "projectUniqueName": "C:\\Users\\jihoon\\source\\repos\\Hoooon22\\Algorithm_EX\\2021_04\\07_StringBasic\\07_StringBasic.csproj",
         "projectName": "07_StringBasic",
-        "projectPath": "C:\\Users\\momo9\\source\\repos\\Hoooon22\\Algorithm_EX\\2021_04\\07_StringBasic\\07_StringBasic.csproj",
-        "packagesPath": "C:\\Users\\momo9\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\momo9\\source\\repos\\Hoooon22\\Algorithm_EX\\2021_04\\07_StringBasic\\obj\\",
+        "projectPath": "C:\\Users\\jihoon\\source\\repos\\Hoooon22\\Algorithm_EX\\2021_04\\07_StringBasic\\07_StringBasic.csproj",
+        "packagesPath": "C:\\Users\\jihoon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jihoon\\source\\repos\\Hoooon22\\Algorithm_EX\\2021_04\\07_StringBasic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\momo9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jihoon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
