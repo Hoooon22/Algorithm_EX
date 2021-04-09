@@ -23,12 +23,18 @@ namespace _09_SkillTree
         static public int solution(string skill, string[] skill_trees)
         {
             int answer = 0;
+
+
+
             return answer;
         }
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string skill = "CBD";
+            string[] skiil_trees = { "BACDE", "CBADF", "AECB", "BDA" };
+
+            Console.WriteLine($"가능한 스킬트리는 총 {solution(skill, skiil_trees)}개 입니다.");
         }
     }
 }
