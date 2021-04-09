@@ -24,7 +24,13 @@ namespace _09_SkillTree
         {
             int answer = 0;
 
+            foreach (string skill_tree in skill_trees)
+            {
+                for (int i = skill.Length - 1; i >= 0; i--) // count 방식으로
+                {
 
+                }
+            }
 
             return answer;
         }
