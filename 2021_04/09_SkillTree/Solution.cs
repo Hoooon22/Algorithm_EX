@@ -23,13 +23,31 @@ namespace _09_SkillTree
         static public int solution(string skill, string[] skill_trees)
         {
             int answer = 0;
+            bool check;
+            int char_index; // 비교하고자 하는 단어의 위치
 
             foreach (string skill_tree in skill_trees)
             {
-                for (int i = skill.Length - 1; i >= 0; i--) // count 방식으로
+                check = true;
+                for (int i = skill.Length - 1; i > 0; i--) // skill의 마지막부터 비교함
                 {
+                    char_index = skill_tree.IndexOf(skill.Substring(i, 1));
 
+                    if (char_index != -1) // 비교하고자 하는 단어가 문자열에 있을 경우
+                    {
+                        // 선행 스킬이 앞에 없을 경우, false
+                        if (!skill_tree.Substring(0, char_index + 1).Contains(skill.Substring(i - 1, 1)))
+                            check = false;
+                    }
                 }
+
+                if (check)
+                {
+                    Console.WriteLine($"{skill_tree} => O");
+                    answer++;
+                }
+                else
+                    Console.WriteLine($"{skill_tree} => X");
             }
 
             return answer;
@@ -38,9 +56,10 @@ namespace _09_SkillTree
         static void Main(string[] args)
         {
             string skill = "CBD";
-            string[] skiil_trees = { "BACDE", "CBADF", "AECB", "BDA" };
+            string[] skill_trees = { "BACDE", "CBADF", "AECB", "BDA" };
 
-            Console.WriteLine($"가능한 스킬트리는 총 {solution(skill, skiil_trees)}개 입니다.");
+            Console.WriteLine($"skill => {skill}");
+            Console.WriteLine($"가능한 스킬트리는 총 {solution(skill, skill_trees)}개 입니다.");
         }
     }
 }
