@@ -13,12 +13,33 @@ namespace _10_Joystick
         static public int solution(string name)
         {
             int answer = 0;
+            int[] visit = new int[name.Length];
+            int left_index, right_index;
+
+            // name의 Length에 따른 다른 방식 적용
+            if (name.Length < 3)
+            {
+                foreach (char c in name)
+                {
+                    if (c <= 'N')
+                        answer += c - 'A'; // A에서 밑으로
+                    else
+                        answer += 'Z' - c + 1; // A에서 위로
+                }
+            }
+            else
+            {
+                left_index = name.Length - 1; // 마지막 인덱스
+                right_index = 1;
+            }
+
             return answer;
         }
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string Nickname = "ABC";
+            Console.WriteLine($"{Nickname}의 최소 이동 횟수는 {solution(Nickname)}회 입니다.");
         }
     }
 }
