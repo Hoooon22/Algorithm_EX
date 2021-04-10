@@ -13,8 +13,6 @@ namespace _10_Joystick
         static public int solution(string name)
         {
             int answer = 0;
-            int[] visit = new int[name.Length];
-            int left_index, right_index;
 
             // name의 Length에 따른 다른 방식 적용
             if (name.Length < 3)
@@ -29,8 +27,40 @@ namespace _10_Joystick
             }
             else
             {
-                left_index = name.Length - 1; // 마지막 인덱스
-                right_index = 1;
+                char[] c = name.ToCharArray();
+
+                int index = 0;
+                int left_index = name.Length - 1; // 마지막 인덱스
+                int right_index = 1;
+
+                // c[0] 알파벳 맞추기
+                if (c[index] <= 'N')
+                    answer += c[index] - 'A'; // A에서 밑으로
+                else
+                    answer += 'Z' - c[index] + 1; // A에서 위로
+
+                // 1. 모든 문자열을 돌때까지 반복
+                while (left_index >= right_index)
+                {
+                    if (Math.Abs(c[right_index] - 'N') > Math.Abs(c[left_index] - 'N')) // right_index로 가는 경우가 효율적일 경우
+                    {
+                        answer++; // right로 한 칸 이동
+                        index = right_index; 
+                        right_index++;
+                    }
+                    else // left_index로 가는 경우가 효율적일 경우
+                    {
+                        answer++; // left로 한 칸 이동
+                        index = left_index; 
+                        left_index--;
+                    }
+
+                    // 2. 알파벳 맞추기
+                    if (c[index] <= 'N')
+                        answer += c[index] - 'A'; // A에서 밑으로
+                    else
+                        answer += 'Z' - c[index] + 1; // A에서 위로
+                }
             }
 
             return answer;
