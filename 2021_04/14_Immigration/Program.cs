@@ -70,7 +70,7 @@ namespace _14_Immigration
             int n = 6;
             int[] times = { 7, 10};
 
-            Console.WriteLine($"{n}명이 있을 때, {solution(n, times)}분에 끝납니다..");
+            Console.WriteLine($"{n}명이 있을 때, {solution(n, times)}분에 끝납니다");
         }
     }
 }
