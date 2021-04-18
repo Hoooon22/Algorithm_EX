@@ -28,7 +28,6 @@ namespace _07_StringBasic
                         answer = false;
                 }
             }    
-
             return answer;
         }
         static void Main(string[] args)
