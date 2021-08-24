@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _24_PhoneNumberList
+namespace _24_BestAlbum
 {
     class Program
     {

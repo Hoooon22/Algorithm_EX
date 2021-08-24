@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>_24_PhoneNumberList</RootNamespace>
+    <RootNamespace>_24_BestAlbum</RootNamespace>
   </PropertyGroup>
 
 </Project>
