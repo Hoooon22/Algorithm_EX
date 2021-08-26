@@ -17,6 +17,12 @@ namespace _24_BestAlbum
         public int[] solution(string[] genres, int[] plays)
         {
             int[] answer = new int[] { };
+            int[] genre_list = new int[100];
+            int[] play_list = new int[100];
+
+            // genre, play list 추가
+
+
             return answer;
         }
     }
