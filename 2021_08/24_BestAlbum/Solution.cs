@@ -17,11 +17,19 @@ namespace _24_BestAlbum
         public int[] solution(string[] genres, int[] plays)
         {
             int[] answer = new int[] { };
-            int[] genre_list = new int[100];
+            string[] genre_list = new string[100];
             int[] play_list = new int[100];
 
-            // genre, play list 추가
-
+            // add genre, play list
+            int i = 0, j = 0;
+            while (i < genres.Length)
+            {
+                if (Array.IndexOf(genre_list, genres[i]) <= -1) // Not Found
+                {
+                    genre_list[j++] = genre_list[i];
+                }
+                i++;
+            }
 
             return answer;
         }
