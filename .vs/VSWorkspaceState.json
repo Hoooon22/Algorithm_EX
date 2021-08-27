@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\2021_08",
+    "\\2021_08\\24_BestAlbum"
   ],
-  "SelectedNode": "\\24_BestAlbum.sln",
+  "SelectedNode": "\\2021_08\\24_BestAlbum\\24_BestAlbum.csproj",
   "PreviewInSolutionExplorer": false
 }
