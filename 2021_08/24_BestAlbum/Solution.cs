@@ -19,9 +19,10 @@ namespace _24_BestAlbum
             int[] answer = new int[] { };
             string[] genre_list = new string[100];
             int[] play_list = new int[100];
+            int i , j;
 
             // add genre, play list
-            int i = 0, j = 0;
+            i = 0; j = 0;
             while (i < genres.Length)
             {
                 if (Array.IndexOf(genre_list, genres[i]) <= -1) // Not Found
@@ -43,7 +44,15 @@ namespace _24_BestAlbum
                 i++;
             }
 
-            // 
+            // selection sort (genre_list, play_list)
+            int minIndex;
+            i = 0; j = 0;
+            for (i = 0; i < genre_list.Length; i++)
+            {
+                minIndex = play_list[i];
+
+            }
+
 
             return answer;
         }
