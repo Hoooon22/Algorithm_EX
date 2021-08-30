@@ -26,10 +26,24 @@ namespace _24_BestAlbum
             {
                 if (Array.IndexOf(genre_list, genres[i]) <= -1) // Not Found
                 {
-                    genre_list[j++] = genre_list[i];
+                    genre_list[j] = genre_list[i];
+                    play_list[j] = plays[i];
+                    j++;
+                }
+                else // Found
+                {
+                    for (int k = 0; k < j; k++)
+                    {
+                        if (genre_list[k] == genres[i])
+                        {
+                            play_list[k] = plays[i];
+                        }
+                    }
                 }
                 i++;
             }
+
+            // 
 
             return answer;
         }
