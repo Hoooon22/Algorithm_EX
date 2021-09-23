@@ -50,7 +50,6 @@ namespace _24_BestAlbum
             for (i = 0; i < genre_list.Length; i++)
             {
                 minIndex = play_list[i];
-
             }
 
 
