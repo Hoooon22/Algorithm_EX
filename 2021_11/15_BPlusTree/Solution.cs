@@ -2,7 +2,7 @@
 
 namespace _15_BPlusTree
 {
-    class Program
+    class Solution
     {
         static void Main(string[] args)
         {
