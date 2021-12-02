@@ -8,7 +8,6 @@ namespace _17_BTree
         public Node left;
         public Node mid;
         public Node right;
-
     }
 
     class Solution
