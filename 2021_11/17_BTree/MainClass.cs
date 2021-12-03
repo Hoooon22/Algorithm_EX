@@ -9,11 +9,21 @@ namespace _17_BTree
         public Node right;
     }
 
-    class Solution
+    class MainClass
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+        }
+
+        // function of Node
+        public Node CreateNode(int data)
+        {
+            var node = new Node();
+            node.data = data;
+            node.left = null;
+            node.right = null;
+            return node;
         }
     }
 }
