@@ -34,7 +34,13 @@ namespace _17_BTree
             }
             else
             {
+                Node tail = head;
 
+                // case 1. if there is no division
+                if (newNode.data > tail.data)
+                {
+
+                }
             }
         }
     }
