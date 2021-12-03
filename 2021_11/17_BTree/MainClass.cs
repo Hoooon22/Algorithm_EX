@@ -28,7 +28,14 @@ namespace _17_BTree
 
         public void AppendNode(ref Node head, Node newNode)
         {
+            if (head == null)
+            {
+                head = newNode;
+            }
+            else
+            {
 
+            }
         }
     }
 }
