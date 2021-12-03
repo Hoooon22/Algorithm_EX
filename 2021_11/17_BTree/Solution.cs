@@ -6,7 +6,6 @@ namespace _17_BTree
     {
         public int data;
         public Node left;
-        public Node mid;
         public Node right;
     }
 
