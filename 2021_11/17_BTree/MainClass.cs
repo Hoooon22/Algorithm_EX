@@ -16,7 +16,7 @@ namespace _17_BTree
             Console.WriteLine("Hello World!");
         }
 
-        // function of Node
+        // functions of Node
         public Node CreateNode(int data)
         {
             var node = new Node();
@@ -24,6 +24,11 @@ namespace _17_BTree
             node.left = null;
             node.right = null;
             return node;
+        }
+
+        public void AppendNode(ref Node head, Node newNode)
+        {
+
         }
     }
 }
