@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.19
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19_CheckDistance", "19_CheckDistance\19_CheckDistance.csproj", "{FFA696E5-60CD-4724-A022-392A3D0C885F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFA696E5-60CD-4724-A022-392A3D0C885F}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{FFA696E5-60CD-4724-A022-392A3D0C885F}.Debug|anycpu.Build.0 = Debug|anycpu
+		{FFA696E5-60CD-4724-A022-392A3D0C885F}.Release|anycpu.ActiveCfg = Release|anycpu
+		{FFA696E5-60CD-4724-A022-392A3D0C885F}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD48E918-7C51-4B54-B1F0-EB7B5DD3A5B8}
+	EndGlobalSection
+EndGlobal
