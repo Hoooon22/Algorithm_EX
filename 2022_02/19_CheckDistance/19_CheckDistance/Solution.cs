@@ -12,6 +12,13 @@ namespace _CheckDistance
         public int[] solution(string[,] places)
         {
             int[] answer = new int[] { };
+
+            // 1. five waitingrooms
+            for (int i = 0; i < 5; i++)
+            {
+
+            }
+
             return answer;
         }
 
