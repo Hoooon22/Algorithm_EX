@@ -7,13 +7,25 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
-void backTracking(int N, int M, int *arr, int count)
+void backTracking(int N, int M, int *arr, vector<int> v, int count)
 {
-    if(count == M)
+    if (count == M)
     {
+        // Check duplication
+        for (int i = 0; i < M; i++)
+        {
+            for (int j = i+1; j < M; j++)
+            {
+                if (arr[i] == arr[j])
+                    return;
+            }
+        }
+        
         // print
         for(int i = 0; i < M; i++)
             cout << arr[i] << ' ';
@@ -21,22 +33,37 @@ void backTracking(int N, int M, int *arr, int count)
         return;
     }
     
-    for(int i = 1; i <= N; i++)
+    for (int i = 0; i < N; i++)
     {
-        arr[count] = i;
-        backTracking(N, M, arr, count+1);
+        arr[count] = v.at(i);
+        backTracking(N, M, arr, v, count+1);
     }
 }
 
 int main(void)
 {
     int N, M;
-    // 1. input N, M
-    cin >> N >> M;
-
+    string str;
+    vector<int> v;
     int *arr = new int[M];
+
+    // 1. input N, M, v
+    cin >> N >> M;
+    cin.ignore();
+    getline(cin, str);
+
+    stringstream ss(str);
+    string token;
+
+    while (getline(ss, token, ' '))
+    {
+        if (token != "")
+            v.push_back(stoi(token));
+    }
+    sort(v.begin(), v.end());
+
     // 2. backtracking
-    backTracking(N, M, arr, 0);
+    backTracking(N, M, arr, v, 0);
 
     return 0;
 }

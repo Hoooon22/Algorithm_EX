@@ -12,7 +12,7 @@ using namespace std;
 
 void backTracking(int N, int M, int *arr, int count)
 {
-    if(count == M)
+    if (count == M)
     {
         // print
         for(int i = 0; i < M; i++)
@@ -21,7 +21,7 @@ void backTracking(int N, int M, int *arr, int count)
         return;
     }
     
-    for(int i = 1; i <= N; i++)
+    for (int i = 1; i <= N; i++)
     {
         arr[count] = i;
         backTracking(N, M, arr, count+1);
