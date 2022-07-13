@@ -1,3 +1,9 @@
+/*
+ 알고리즘 문제 : 백준 15649 - N과 M (3)
+ 실습 날짜 : 2022-07-13
+ 문제 : https://www.acmicpc.net/problem/15651
+ */
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
