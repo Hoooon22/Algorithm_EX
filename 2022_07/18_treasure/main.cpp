@@ -13,6 +13,11 @@
 
 using namespace std;
 
+bool compare(int i, int j)
+{
+    return j < i;
+}
+
 int main()
 {
     int N;
@@ -20,6 +25,8 @@ int main()
     vector<int> B;
     string tmp;
     string word;
+    int a, b;
+    int sum = 0;
     
     // input
     cin >> N;
@@ -36,7 +43,33 @@ int main()
         B.push_back(stoi(word));
 
     // find S
-    
+    for (int i = 0; i < N; i++)
+    {
+        a = *max_element(A.begin(), A.end());
+        b = *min_element(B.begin(), B.end());
+        sum += a * b;
+        cout << sum << "=" << a << "?" << A.back() << endl;
+        cout << sum << "=" << b << "?" << B.back() << endl << endl;
+        if (a == (int)A.back())
+        {
+            A.pop_back();
+        }
+        else
+        {
+            remove(A.begin(), A.end(), *max_element(A.begin(), A.end()));
+        }
+        
+        if (b == (int)B.back())
+        {
+            B.pop_back();
+        }
+        else
+        {
+            remove(B.begin(), B.end(), *min_element(B.begin(), B.end()));
+        }
+    }
+
+    cout << sum << endl;
 
     return 0;
 }
