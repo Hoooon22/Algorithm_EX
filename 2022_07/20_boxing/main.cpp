@@ -4,16 +4,38 @@
  문제 : https://www.acmicpc.net/problem/1965
  */
 
-#include <iostream>
-#include <string>
-#include <cstring>
-
+#include <cstdio>
+#include <algorithm>
 using namespace std;
 
-int main()
-{
+int main() {
+
     int N;
-    cin >> N;
+    int result = 0;
+    scanf("%d", &N);
+
+    int arr[N];
+    int dp[N];
+
+    for (int i = 0; i < N; i++) 
+    {
+        scanf("%d", &arr[i]);
+        dp[i] = 0;
+    }
+
+    dp[0] = 1;
+    for (int i = 1; i < N; i++) 
+    {
+        for (int j = 0; j < i; j++) 
+        {
+            if (arr[i] > arr[j]) 
+                dp[i] = max(dp[i], dp[j]);
+        }
+        dp[i]++;
+        result = max(result, dp[i]);
+    }
+
+    printf("%d\n", result);
 
     return 0;
 }
