@@ -28,10 +28,10 @@ int main() {
     {
         for (int j = 0; j < i; j++) 
         {
-            if (arr[i] > arr[j]) 
+            if (arr[i] > arr[j]) // 이전 dp 값 중 더 큰 쪽 선택
                 dp[i] = max(dp[i], dp[j]);
         }
-        dp[i]++;
+        dp[i]++; // i번째 상자 담기
         result = max(result, dp[i]);
     }
 
