@@ -24,7 +24,7 @@ void bruteforce(int second)
 	while (true)
 	{
 		sum = bf_v.at(count-2) - bf_v.at(count-1);
-		if (sum > 0)
+		if (sum >= 0)
 			bf_v.push_back(sum);
 		else
 			break;
@@ -41,7 +41,7 @@ int main(void)
 	cin >> first;
 
 	// 2. pick second number & 3. minus
-	for (int i = first-1; i > 0; i--)
+	for (int i = first; i > 0; i--)
 	{
 		bruteforce(i);
 	}
