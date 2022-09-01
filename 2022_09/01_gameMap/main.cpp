@@ -9,10 +9,19 @@
 #include <vector>
 
 using namespace std;
+using namespace std;
 
-int main(void) 
+int solution(vector<vector<int> > maps)
 {
+    int answer = 0;
+
     
-	
-	return 0;
+
+    return answer;
+}
+
+int main()
+{
+
+    return 0;
 }
