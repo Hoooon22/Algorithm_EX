@@ -5,16 +5,23 @@
  */
 
 #include <iostream>
-#include <string>
+#include <algorithm>
 #include <vector>
 
 using namespace std;
-using namespace std;
 
-int solution(vector<vector<int> > maps)
+int bfs(vector<vector<int>> maps, bool visited[], int count)
+{
+
+
+    return count;
+}
+
+int solution(vector<vector<int>> maps)
 {
     int answer = 0;
-
+    bool visited[10000]; // max size : 100x100
+    
     
 
     return answer;
