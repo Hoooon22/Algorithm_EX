@@ -11,7 +11,7 @@ class Solution {
         for (int i : people) {
             V_people.add(i);
         }
-        V_people.sort(c);
+        Collection.sort(V_people); // 내림차 정렬 하기
 
         V_boat.add(people[0]);
         for (int i = 1; i < people.length; i++) {
