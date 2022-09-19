@@ -1,9 +1,6 @@
 import java.util.*;
 
 public class Solution {
-    public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
-    }
 
     public int[] solution(String[] operations) {
         int[] answer = {0, 0};
@@ -18,12 +15,14 @@ public class Solution {
             }
             else if (!minHeap.isEmpty()) {
                 if (operations[i].equals("D -1")) {
-                    minHeap.remove();
-                    maxHeap.remove(maxHeap.size()-1);
+                    maxHeap.remove(minHeap.poll());
+                    // minHeap.remove();
+                    // maxHeap.remove(maxHeap.size()-1);
                 }
-                else if (operations[i].equals("D 1")) {
-                    maxHeap.remove();
-                    minHeap.remove(minHeap.size()-1);
+                else if (operations[i].equals("D 1")) { 
+                    minHeap.remove(maxHeap.poll());
+                    // maxHeap.remove();
+                    // minHeap.remove(minHeap.size()-1);
                 }
             }
         }
