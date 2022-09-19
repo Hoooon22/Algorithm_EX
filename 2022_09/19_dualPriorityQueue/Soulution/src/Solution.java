@@ -11,6 +11,18 @@ public class Solution {
         int[] answer = {};
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         
+        // for operations
+        for (int i = 0; i < operations.length; i++) {
+            if (operations[i].charAt(0)== 'I') {
+                minHeap.add(Integer.parseInt(operations[i].substring(2)));
+            }
+            else if (operations[i] == "D 1") {
+
+            }
+            else if (operations[i] == "D -1") {
+                
+            }
+        }
 
         return answer;
     }
