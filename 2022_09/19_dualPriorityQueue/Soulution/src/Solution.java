@@ -6,7 +6,7 @@ public class Solution {
     }
 
     public int[] solution(String[] operations) {
-        int[] answer = {};
+        int[] answer = {0, 0};
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
 
@@ -17,18 +17,20 @@ public class Solution {
                 maxHeap.add(Integer.parseInt(operations[i].substring(2)));
             }
             else if (!minHeap.isEmpty()) {
-                if (operations[i] == "D 1") {
+                if (operations[i].equals("D -1")) {
                     minHeap.remove();
-                    maxHeap.remove(Integer.parseInt(operations[i].substring(operations[i].length()-1)));
+                    maxHeap.remove(maxHeap.size()-1);
                 }
-                else if (operations[i] == "D -1") {
+                else if (operations[i].equals("D 1")) {
                     maxHeap.remove();
-                    minHeap.remove(Integer.parseInt(operations[i].substring(operations[i].length()-1)));
+                    minHeap.remove(minHeap.size()-1);
                 }
             }
         }
-        answer[0] = minHeap.poll();
-        answer[1] = maxHeap.poll();
+        if (!minHeap.isEmpty()) {
+            answer[0] = maxHeap.poll();
+            answer[1] = minHeap.poll();
+        }
 
         return answer;
     }
