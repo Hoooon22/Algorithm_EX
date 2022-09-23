@@ -65,8 +65,21 @@ public class Solution {
         }
 
         // Search
-        Arrays.fill(visited, false);
-        
+        if (!words[tmp].equals(target)) {
+            return 0;
+        }
+
+        queue.clear();
+        int n = tmp;
+        queue.add(tmp);
+        while (n != words.length) {
+            for (int i = 0; i <= words.length; i++) {
+                if (graph.get(i).contains(words[n])) {
+                    n = i;
+                    answer++;
+                }
+            }
+        }
 
         return answer;
     }
