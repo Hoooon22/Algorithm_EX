@@ -13,18 +13,18 @@ public class Solution {
         camera[0][1] = routes[0][1];
         answer++;
         
-        for (int i = 0; i < routes.length; i++) {
-            for (int j = 0; j <= answer; j++) {
+        for (int i = 1; i < routes.length; i++) {
+            for (int j = 0; j < answer; j++) {
                 // ! 겹치는 상황이 하나가 아님 !
-                if (routes[i][1] <= camera[j][0] || routes[i][0] >= camera[j][1]) { //  범위 안에 있다면
+                if ((routes[i][1] >= camera[j][0] && routes[i][0] <= camera[j][1]) || (routes[i][0] <= camera[j][1] && routes[i][1] >= camera[j][0])) { //  범위 안에 있다면
                     isOverlap = true;
                     break;
                 }
             }
             if (!isOverlap) { // 겹치는 부분이 없다면
-                answer++;
                 camera[answer][0] = routes[i][0];
                 camera[answer][1] = routes[i][1];
+                answer++;
             }
             isOverlap = false;
         }
