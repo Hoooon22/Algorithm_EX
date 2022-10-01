@@ -1,12 +1,18 @@
-import java.util.Arrays;
 import java.util.ArrayList;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
     }
+
+    public int calculation (ArrayList<String>[] arr_ban, int index) {
+
+
+        return 0;
+    }
+
     public int solution(String[] user_id, String[] banned_id) {
-        int answer = 1;
+        int answer = 0;
         ArrayList<String>[] arr_ban = new ArrayList[banned_id.length];
         for (int i = 0; i < banned_id.length; i++) {
             arr_ban[i] = new ArrayList<String>();
@@ -30,12 +36,7 @@ public class Solution {
         }
 
         // calculation
-        for (int i = 0; i < arr_ban.length; i++) {
-            boolean[] visited = new boolean[arr_ban[i].size()];
-            for (int j = 0; j < visited.length; j++) {
-                
-            }
-        }
+        answer = calculation(arr_ban, 0);
 
         return answer;
     }
