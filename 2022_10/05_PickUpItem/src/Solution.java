@@ -17,24 +17,24 @@ public class Solution {
         int currentY = characterY;
 
         // 2 way in -> first way = clockwise
-        // 1 - down / 2 - right / 3 - up / 4 - left /
+        // 1 - down / 2 - up / 3 - right / 4 - left /
         // box's direction setting
         for (int i = 0; i < rectangle.length; i++) {
             // left side - up
             for (int j = rectangle[i][1]; j <= rectangle[i][3]; j++) {
-                if (dir_clock[rectangle[i][0]][j] < 3) {
-                    dir_clock[rectangle[i][0]][j] = 3;
+                if (dir_clock[rectangle[i][0]][j] < 2) {
+                    dir_clock[rectangle[i][0]][j] = 2;
                 }
             }
             // top side - right
             for (int j = rectangle[i][0]; j <= rectangle[i][2]; j++) {
-                if (dir_clock[j][rectangle[i][3]] < 2) {
-                    dir_clock[j][rectangle[i][3]] = 2;
+                if (dir_clock[j][rectangle[i][3]] < 3) {
+                    dir_clock[j][rectangle[i][3]] = 3;
                 }
             }
             // right side - down
             for (int j = rectangle[i][1]; j < rectangle[i][3]; j++) {
-                if (dir_clock[rectangle[i][2]][j] == 4) {
+                if (dir_clock[rectangle[i][2]][j] == 4 || dir_clock[rectangle[i][2]][j] == 0) {
                     dir_clock[rectangle[i][2]][j] = 1;
                 }
             }
@@ -48,7 +48,7 @@ public class Solution {
         while (!isGoal(currentX, currentY, itemX, itemY)) {
             switch (dir_clock[currentX][currentY]) {
                 case 1:
-                    currentX--;
+                    currentY--;
                     break;
                 case 2:
                     currentY++;
@@ -57,7 +57,7 @@ public class Solution {
                     currentX++;
                     break;
                 case 4:
-                    currentY--;
+                    currentX--;
                     break;
                 default:
                     break;
@@ -66,25 +66,25 @@ public class Solution {
         }
 
         // 2 way in -> second way = counterclockwise
-        //  1 - down / 2 - left / 3 - up / 4 - right /
+        //  1 - down / 2 - up / 3 - left / 4 - right /
         // box's direction setting
         for (int i = 0; i < rectangle.length; i++) {
             // left side - down
             for (int j = rectangle[i][1]; j <= rectangle[i][3]; j++) {
-                if (dir_counterclock[rectangle[i][0]][j] == 4) {
+                if (dir_counterclock[rectangle[i][0]][j] == 4 || dir_counterclock[rectangle[i][0]][j] == 0) {
                     dir_counterclock[rectangle[i][0]][j] = 1;
                 }
             }
             // top side - left
             for (int j = rectangle[i][0]; j <= rectangle[i][2]; j++) {
-                if (dir_counterclock[j][rectangle[i][3]] < 2) {
-                    dir_counterclock[j][rectangle[i][3]] = 2;
+                if (dir_counterclock[j][rectangle[i][3]] < 3) {
+                    dir_counterclock[j][rectangle[i][3]] = 3;
                 }
             }
             // right side - up
             for (int j = rectangle[i][1]; j < rectangle[i][3]; j++) {
-                if (dir_counterclock[rectangle[i][2]][j] < 3) {
-                    dir_counterclock[rectangle[i][2]][j] = 3;
+                if (dir_counterclock[rectangle[i][2]][j] < 2) {
+                    dir_counterclock[rectangle[i][2]][j] = 2;
                 }
             }
             // bottom side - right
@@ -97,16 +97,16 @@ public class Solution {
         while (!isGoal(currentX, currentY, itemX, itemY)) {
             switch (dir_counterclock[currentX][currentY]) {
                 case 1:
-                    currentX--;
+                    currentY--;
                     break;
                 case 2:
                     currentY++;
                     break;
                 case 3:
-                    currentX++;
+                    currentX--;
                     break;
                 case 4:
-                    currentY--;
+                    currentX++;
                     break;
                 default:
                     break;
