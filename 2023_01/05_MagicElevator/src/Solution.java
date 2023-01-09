@@ -6,14 +6,38 @@
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        System.out.println(solution(555));
     }
 
-    public int solution(int storey) {
+    public static int solution(int storey) {
         int answer = 0;
+        int tmp = storey;
+        boolean check = false;
 
+        while (tmp > 0) {
+            int number = tmp % 10;
 
+            // if over half
+            if (number > 5 && tmp < 10 && !check) {
+                answer += 10 - number;
+            }
+            else if (number >= 5 && tmp > 10) {
+                answer += 10 - number;
+                if (check) {
+                    answer -= 1;
+                }
+                check = true;
+            }
+            else if (check) {
+                answer += 10 - number + 1;
+                check = false;
+            }
+            else {
+                answer += number;
+            }
 
+            tmp /= 10;
+        }
         return answer;
     }
 }
