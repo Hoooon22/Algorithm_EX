@@ -10,7 +10,7 @@ import java.lang.Math;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        System.out.println(solution("BBBBAAAABA"));
+        System.out.println(solution("ABBBBBBAAAAAAABA"));
     }
 
     public static int solution(String name) {
@@ -82,6 +82,7 @@ public class Solution {
     public static int moveSide(boolean[] visited, int index) {
         int right = 0, left = 0;
         int tmp = index;
+        int move = 0;
 
         // right
         while (true) {
@@ -109,6 +110,7 @@ public class Solution {
             }
         }
 
-        return (right > left) ? (-1 * left) : right;
+        move = (right > left) ? (-1 * left) : right;
+        return move;
     }
 }
