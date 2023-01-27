@@ -1,5 +1,5 @@
 /*
- 알고리즘 문제 : 프로그래머스 - 네트워크
+ 알고리즘 문제 : 프로그래머스 - 조이스틱
  실습 날짜 : 2023-01-26
  문제 : https://school.programmers.co.kr/learn/courses/30/lessons/42860
 */
