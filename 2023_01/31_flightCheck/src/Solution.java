@@ -5,19 +5,20 @@ class Solution {
     public long solution(int n, int[] times) {
         
         double vel = 0;
-        for (int t : times) vel += 1D / t;
-        double bound = n / vel;
+        for (int t : times) 
+            vel += 1D / t;
+        double approx = n / vel;
 
         
         PriorityQueue<long[]> heap = new PriorityQueue<>(Comparator.comparingLong(a -> a[0] + a[1]));
         
         for (int t : times) {
-            long cnt = (long) (bound / t);
+            long cnt = (long) (approx / t);
             heap.offer(new long[]{t, cnt * t});
             n -= cnt;
         }
 
-        long max = (long) bound;
+        long max = (long) approx;
         for (int i = 0; i < n; i++) {
             long[] a = heap.poll();
             a[1] += a[0];
