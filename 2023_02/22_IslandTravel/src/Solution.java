@@ -3,8 +3,8 @@ public class Solution {
         System.out.println("Hello, World!");
     }
 
-    public long solution(int cap, int n, int[] deliveries, int[] pickups) {
-        long answer = 0;
+    public int[] solution(String[] maps) {
+        int[] answer = {};
 
         
 
