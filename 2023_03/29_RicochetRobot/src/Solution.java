@@ -97,7 +97,8 @@ public class Solution {
                 }
             }
         }
-
-        return goal;
+        
+        // 찾지 못했다면, -1
+        return -1;
     }
 }
