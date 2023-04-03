@@ -60,10 +60,12 @@ public class Solution {
             var curr = queue.remove();
             var curr_x = curr[0];
             var curr_y = curr[1];
+            goal++;
 
-            // printMap(arr_board, curr_x, curr_y);
+            printMap(arr_board, curr_x, curr_y);
 
             // 4방향 벽까지 상하좌우 이동 
+
             for (int i = 0; i < dx.length; i++) {
                 // 현재 좌표 설정
                 var nx = curr_x;
@@ -100,18 +102,18 @@ public class Solution {
         return -1;
     }
 
-    // public static void printMap(char[][] arr_board, int x, int y) {
-    //     for (int i = 0; i < arr_board.length; i++) {
-    //         for (int j = 0; j < arr_board[0].length; j++) {
-    //             if (i == x && j == y) {
-    //                 System.out.print('R');
-    //             }
-    //             else {
-    //                 System.out.print(arr_board[i][j]);
-    //             }
-    //         }
-    //         System.out.println();
-    //     }
-    //     System.out.println();
-    // }
+    public static void printMap(char[][] arr_board, int x, int y) {
+        for (int i = 0; i < arr_board.length; i++) {
+            for (int j = 0; j < arr_board[0].length; j++) {
+                if (i == x && j == y) {
+                    System.out.print('R');
+                }
+                else {
+                    System.out.print(arr_board[i][j]);
+                }
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
 }
