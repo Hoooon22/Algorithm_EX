@@ -18,4 +18,26 @@ public class Solution {
 
         return answer;
     }
+
+    // 연속 부분 수열에 유리한 펄스 수열의 합을 출력
+    public static long sumOfPurse(int[] seq) {
+        long result1 = 0;
+        long result2 = 0;
+
+        // 1, -1, ...
+        int purse = 1;
+        for (int i = 0; i < seq.length; i++) {
+            result1 += seq[i] * purse;
+            purse *= -1;
+        }
+
+        // -1, 1, ...
+        purse = -1;
+        for (int i = 0; i < seq.length; i++) {
+            result2 += seq[i] * purse;
+            purse *= -1;
+        }
+
+        return Math.max(result1, result2);
+    }
 }
