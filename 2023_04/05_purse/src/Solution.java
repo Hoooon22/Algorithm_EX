@@ -8,13 +8,19 @@ import java.util.*;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        int arr[] = {2, 3, -6, 1, 3, -1, 2, 4};
+        System.out.println(solution(arr));
     }
 
-    public long solution(int[] sequence) {
+    public static long solution(int[] sequence) {
         long answer = 0;
 
-        
+        for (int i = 0; i < sequence.length; i++) {
+            for (int j = i+1; j < sequence.length-i; j++) {
+                int[] arr = Arrays.copyOfRange(sequence, i, j);
+                answer = Math.max(answer, sumOfPurse(arr));
+            }
+        }
 
         return answer;
     }
