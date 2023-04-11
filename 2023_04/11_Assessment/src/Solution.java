@@ -6,20 +6,18 @@
 
 import java.util.*;
 
-import javax.swing.text.StyledEditorKit.BoldAction;
-
 public class Solution {
     public static void main(String[] args) throws Exception {
-        int[][] scores = {{100, 1}, {1010, 1}, {100, 1}};
+        int[][] scores = {{100, 1}, {1010, 2}, {100, 1}};
 
         System.out.println(solution(scores));
     }
 
     public static int solution(int[][] scores) {
         int answer = 1; // 순위
-        int[] arr_wanho = scores[0];
+        int[] arr_wanho = {scores[0][0], scores[0][1]};
         int sum_wanho = scores[0][0] + scores[0][1]; // 완호
-        Queue<Integer[]> queue = new LinkedList<>(); // 인센티브 조건을 만족한 사원만 추가하는 큐
+        LinkedList<Integer[]> incentive_list = new LinkedList<>(); // 인센티브 조건을 만족한 사원만 추가하는 큐
 
         // 오름차순 정렬
         Arrays.sort(scores, ((o1, o2) -> {
@@ -38,13 +36,22 @@ public class Solution {
             // 완호보다 낮으면 그냥 out
             if (!(arr_wanho[0] > scores[i][0] && arr_wanho[1] > scores[i][1])) {
                 for (j = i+1; j < scores.length; j++) {
-                    // 점수가 둘 다 낮으면
+                    // 점수가 둘 다 낮으면 out
                     if (scores[i][0] < scores[j][0] && scores[i][1] < scores[j][1])
                     {
                         isCheck = false;
 
-                        // 이후 같은 값이 있
-
+                        // 이전에 같은 값이 있으면 그것도 뺌
+                        int x = i-1;
+                        while (x > 0) {
+                            if (scores[i][0] == scores[x][0] && scores[i][1] == scores[x][1]) {
+                                System.out.println(incentive_list.removeLast());
+                                x--;
+                            }
+                            else {
+                                break;
+                            }
+                        }
                         break;
                     }
                 }
@@ -52,21 +59,19 @@ public class Solution {
                 // 인센티브 조건을 만족한다면
                 if (isCheck) {
                     Integer[] list = Arrays.stream(scores[i]).boxed().toArray(Integer[]::new);
-                    queue.add(list);
+                    incentive_list.add(list);
                 }
-                else if (i == 0) { // 조건이 안되는 게 완호라면, -1
+                else if (arr_wanho[0] == scores[i][0] && arr_wanho[1] == scores[i][1]) { // 조건이 안되는 게 완호라면, -1
                     return -1;
                 }
             }
         }
 
         // 점수의 합을 결정하고 내림차순 sort
-        Integer[] sum = new Integer[queue.size()];
+        Integer[] sum = new Integer[incentive_list.size()];
         for (int i = 0; i < sum.length; i++) {
-            Integer[] list = new Integer[2];
-            list = queue.poll();
-            sum[i] = list[0] + list[1];
-            // System.out.printf("%d %d\n",list[0], list[1]);
+            sum[i] = incentive_list.get(i)[0] + incentive_list.get(i)[1];
+            System.out.printf("%d %d\n", incentive_list.get(i)[0], incentive_list.get(i)[1]);
         }
         Arrays.sort(sum, Collections.reverseOrder());
 
