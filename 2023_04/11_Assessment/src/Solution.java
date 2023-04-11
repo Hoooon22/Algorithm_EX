@@ -13,6 +13,19 @@ public class Solution {
 
     public int solution(int[][] scores) {
         int answer = 0;
+        int[] wanho = {scores[0][0], scores[0][1]};
+
+        // 오름차순 정렬
+        Arrays.sort(scores, ((o1, o2) -> {
+            if (o1[0] == o2[0]) {
+                return Integer.compare(o1[1], o2[1]);
+            } else {
+                return Integer.compare(o1[0], o2[0]);
+            }
+        }));
+
+        
+
         return answer;
     }
 }
