@@ -38,7 +38,7 @@ public class Solution {
             }
         }));
 
-        // 인센티븐 조건 체크
+        // 인센티브 조건 체크
         for (int i = 0; i < arrange_score.length; i++) {
             Boolean isCheck = true;
 
