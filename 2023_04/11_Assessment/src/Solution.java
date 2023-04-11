@@ -40,18 +40,6 @@ public class Solution {
                     if (scores[i][0] < scores[j][0] && scores[i][1] < scores[j][1])
                     {
                         isCheck = false;
-
-                        // 이전에 같은 값이 있으면 그것도 뺌
-                        int x = i-1;
-                        while (x > 0) {
-                            if (scores[i][0] == scores[x][0] && scores[i][1] == scores[x][1]) {
-                                System.out.println(incentive_list.removeLast());
-                                x--;
-                            }
-                            else {
-                                break;
-                            }
-                        }
                         break;
                     }
                 }
