@@ -25,17 +25,20 @@ class Solution {
         
         // calculate
         while (list.size() > 0) {
+            int tmp_s = list.get(0)[0]; // s
             int tmp_e = list.get(0)[1]; // e
+            System.out.print(list.get(0)[0] + ", ");
+            System.out.print(list.get(0)[1] + "\n");
             list.remove(0);
             for (int i = 0; i < list.size(); i++) {
-                if (list.get(i)[0] < tmp_e && list.get(i)[1] > tmp_e) {
-                    //System.out.print(list.get(i)[0] + ", ");
-                    //System.out.print(list.get(i)[1] + "\n");
+                if (list.get(i)[1] >= tmp_e) {
+                    tmp_s = list.get(i)[0];
+                    tmp_e = list.get(i)[1];
                     list.remove(i);
-                    i--;
+                    i = 0;
                 }
             }
-            //System.out.println("..............");
+            System.out.println("..............");
             answer++;
         }
         
