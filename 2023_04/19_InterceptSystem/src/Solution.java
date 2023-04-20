@@ -6,13 +6,39 @@
 
 import java.util.*;
 
-public class Solution {
-    public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
-    }
-
+class Solution {
     public int solution(int[][] targets) {
         int answer = 0;
+        
+        Arrays.sort(targets, new Comparator<int[]>() {
+           @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[1] - o2[1]; // 두번째 숫자 기준 오름차순
+            }
+        });
+        
+        // sorted array to List
+        List<int[]> list = new ArrayList<int[]>();
+        for (int i = 0; i < targets.length; i++) {
+            list.add(targets[i]);
+        }
+        
+        // calculate
+        while (list.size() > 0) {
+            int tmp_e = list.get(0)[1]; // e
+            list.remove(0);
+            for (int i = 0; i < list.size(); i++) {
+                if (list.get(i)[0] < tmp_e && list.get(i)[1] > tmp_e) {
+                    //System.out.print(list.get(i)[0] + ", ");
+                    //System.out.print(list.get(i)[1] + "\n");
+                    list.remove(i);
+                    i--;
+                }
+            }
+            //System.out.println("..............");
+            answer++;
+        }
+        
         return answer;
     }
 }
