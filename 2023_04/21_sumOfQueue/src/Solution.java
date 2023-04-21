@@ -17,7 +17,9 @@ class Solution {
         for (int i = 0; i < queue1.length; i++) {
             sum += queue1[i] - queue2[i];
         }
-        
+        if (Math.abs(sum) % 2 != 0) { // sum이 홀수라면
+            return -1;
+        }
         
         // queue to q
         for (int i = 0; i < queue1.length; i++) {
@@ -27,7 +29,7 @@ class Solution {
         
         // 
         while (sum != 0) {
-            if (answer > queue1.length + queue2.length) {
+            if (answer >= 2*(queue1.length + queue2.length)) {
                 return -1;
             }
             else {
