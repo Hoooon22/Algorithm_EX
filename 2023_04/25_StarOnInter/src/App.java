@@ -29,8 +29,8 @@ class Solution {
         long[][] resultArr = list.toArray(new long[listSize][2]);
         
         // 맵 크기 설정 및 생성
-        long[] min = {1000000000, 1000000000};
-        long[] max = {-1000000000, -1000000000};
+        long[] min = {Long.MAX_VALUE, Long.MAX_VALUE};
+        long[] max = {Long.MIN_VALUE, Long.MIN_VALUE};
         for(int i = 0; i < resultArr.length; i++) {
             // min max x,y
             if (resultArr[i][0] < min[0]) {
