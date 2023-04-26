@@ -8,7 +8,7 @@ import java.util.*;
 
 class Solution {
     public String[] solution(int[][] line) {
-        List<int[]> list = new LinkedList<>();
+        List<long[]> list = new LinkedList<>();
         
         // 교점 찾기
         for (int i = 0; i < line.length-1; i++) {
@@ -16,7 +16,7 @@ class Solution {
                 if (isInter(line[i], line[j])) {
                     double[] test = intersection(line[i], line[j]);
                     if (test[0] % 1 == 0.0 && test[1] % 1 == 0.0) {
-                        int[] inter = {(int)test[0], (int)test[1]};
+                        long[] inter = {(long)test[0], (long)test[1]};
                         list.add(inter);
                         // System.out.printf("%d, %d\n", inter[0], inter[1]);
                     }
@@ -26,11 +26,11 @@ class Solution {
         
         // list to arr
         int listSize = list.size();
-        int[][] resultArr = list.toArray(new int[listSize][2]);
+        long[][] resultArr = list.toArray(new long[listSize][2]);
         
         // 맵 크기 설정 및 생성
-        int[] min = {100000, 100000};
-        int[] max = {-100000, -100000};
+        long[] min = {1000000000, 1000000000};
+        long[] max = {-1000000000, -1000000000};
         for(int i = 0; i < resultArr.length; i++) {
             // min max x,y
             if (resultArr[i][0] < min[0]) {
@@ -49,17 +49,17 @@ class Solution {
         // System.out.printf("%d, %d, %d, %d\n", min[0], min[1], max[0], max[1]);
 
         // 맵 구현
-        String[] answer = new String[Math.abs(max[1] - min[1])+1];
+        String[] answer = new String[(int)Math.abs((max[1] - min[1])+1)];
         for (int i = 0; i < answer.length; i++) {
-            String str = ".".repeat(Math.abs(max[0] - min[0])+1);
+            String str = ".".repeat((int)Math.abs((max[0] - min[0])+1));
             answer[i] = str;
             // System.out.println(str);
         }
         // 별 표시
         for (int i = 0; i < resultArr.length; i++) {
             String str = "";
-            int x = resultArr[i][0] - min[0];
-            int y = Math.abs(max[1] - min[1]) - (resultArr[i][1] - min[1]);
+            int x = (int)(resultArr[i][0] - min[0]);
+            int y = Math.abs((int)(max[1] - min[1])) - (int)(resultArr[i][1] - min[1]);
             // System.out.printf("%d, %d\n", x,y);
             
             for (int j = 0; j < answer[y].length(); j++) {
@@ -96,8 +96,8 @@ class Solution {
     public static double[] intersection(int[] line1, int[] line2) {
         double[] result = new double[2];
         
-        result[0] = (double)(line1[1] * line2[2] - line1[2] * line2[1]) / (double)(line1[0] * line2[1] - line1[1] * line2[0]);
-        result[1] = (double)(line1[2] * line2[0] - line1[0] * line2[2]) / (double)(line1[0] * line2[1] - line1[1] * line2[0]);
+        result[0] = (double)((long)line1[1] * (long)line2[2] - (long)line1[2] * (long)line2[1]) / (double)((long)line1[0] * (long)line2[1] - (long)line1[1] * (long)line2[0]);
+        result[1] = (double)((long)line1[2] * (long)line2[0] - (long)line1[0] * (long)line2[2]) / (double)((long)line1[0] * (long)line2[1] - (long)line1[1] * (long)line2[0]);
         
         return result;
     }
