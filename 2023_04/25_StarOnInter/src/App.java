@@ -18,7 +18,7 @@ class Solution {
                     if (test[0] % 1 == 0.0 && test[1] % 1 == 0.0) {
                         long[] inter = {(long)test[0], (long)test[1]};
                         list.add(inter);
-                        // System.out.printf("%d, %d\n", inter[0], inter[1]);
+                        //System.out.printf("%d, %d\n", inter[0], inter[1]);
                     }
                 }
             }
