@@ -18,29 +18,34 @@ class Solution {
             double checkY = Math.abs((startY + ball[1]) - n);
             
             // 목적지 좌표 설정
-            if (startX == ball[0]) {
-                destX = (startX*2 <= m) ? -1 * ball[0] : ball[0] + (m-ball[0]) * 2;
-                destY = ball[1];
+            // X
+            int length_line = Integer.MAX_VALUE;
+            if (startY != ball[1]) {
+                length_line = calLine(startX, startY, -1 * ball[0], ball[1]);
             }
-            else if (startY == ball[1]) {
-                destX = ball[0];
-                destY = (startY*2 <= n) ? -1 * ball[1] : ball[1] + (n-ball[1]) * 2;
-            }
-            // 3, 4
-            else if (checkX >= checkY) {
-                destX = (startX*2 <= m) ? -1 * ball[0] : ball[0] + (m-ball[0]) * 2;
-                destY = ball[1];
-            } 
-            else if (checkX <= checkY) {
-                destX = (startX*2 <= m) ? -1 * ball[0] : ball[0] + (m-ball[0]) * 2;
-                destY = ball[1];
-            } 
             
-            System.out.printf("%d, %d\n", destX, destY);
-            answer[i] = (int)(Math.pow(startX - destX, 2) + Math.pow(startY - destY, 2));
+            int tmp_line = calLine(startX, startY, ball[0] + (m-ball[0]) * 2, ball[1]);
+            if (length_line > tmp_line && startY != ball[1]) {
+                length_line = tmp_line;
+            }
+            // Y
+            tmp_line = calLine(startX, startY, ball[0], -1 * ball[1]);
+            if (length_line > tmp_line && startX != ball[0]) {
+                length_line = tmp_line;
+            }
+            tmp_line = calLine(startX, startY, ball[0], ball[1] + (n-ball[1]) * 2);
+            if (length_line > tmp_line && startX != ball[0]) {
+                length_line = tmp_line;
+            }
+            
+            answer[i] = length_line;
             i++;
         }
         
         return answer;
+    }
+    
+    public static int calLine(int startX, int startY, int destX, int destY) {
+        return (int)(Math.pow(startX - destX, 2) + Math.pow(startY - destY, 2));
     }
 }
