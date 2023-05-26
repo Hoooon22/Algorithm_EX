@@ -87,37 +87,47 @@ class Solution {
     public String solution(int n, int m, int x, int y, int r, int c, int k) {
         String answer = "";
         List<Character> re_ch = new ArrayList<>((int)(Math.abs(x-r) + Math.abs(y-c)));
-        MinCommand mincommand = new MinCommand(x-r, y-c);
+        MinCommand mincommand = new MinCommand(y-c, x-r);
         
         // 나머지가 다르면 경로 없음
         if (k % 2 != (int)(Math.abs(x-r) + Math.abs(y-c)) % 2) {
             return "impossible";
         }
-        
-        // 최소 명령어 문자 추가 re_ch
-        while (!mincommand.isEmpty()) {
-            char tmp;
-            tmp = mincommand.decrement_up();
-            if (tmp != 0) {
-                re_ch.add(tmp);
+        else {     
+            // 최소 명령어 문자 추가 re_ch
+            while (!mincommand.isEmpty()) {
+                char tmp;
+                tmp = mincommand.decrement_up();
+                if (tmp != 0) {
+                    re_ch.add(tmp);
+                }
+                tmp = mincommand.decrement_down();
+                if (tmp != 0) {
+                    re_ch.add(tmp);
+                }
+                tmp = mincommand.decrement_left();
+                if (tmp != 0) {
+                    re_ch.add(tmp);
+                }
+                tmp = mincommand.decrement_right();
+                if (tmp != 0) {
+                    re_ch.add(tmp);
+                }
             }
-            tmp = mincommand.decrement_down();
-            if (tmp != 0) {
-                re_ch.add(tmp);
+
+            // 사전 순으로 -> 가장 사전순 따른 두 움직임은 d,u / l,r / r,l / u,d
+            int remain_num = k - (int)(Math.abs(x-r) + Math.abs(y-c));
+            List<Character> list_str = new ArrayList<>(k);
+            for (char ch : re_ch) {
+                list_str.add(ch);
             }
-            tmp = mincommand.decrement_left();
-            if (tmp != 0) {
-                re_ch.add(tmp);
+            Collections.sort(list_str); // sort
+            for(char ch : list_str) {
+                answer += ch;
             }
-            tmp = mincommand.decrement_right();
-            if (tmp != 0) {
-                re_ch.add(tmp);
-            }
+            
+
+            return answer;   
         }
-        
-        // 사전 순으로 
-        
-        
-        return answer;
     }
 }
