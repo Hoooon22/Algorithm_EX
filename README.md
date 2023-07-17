@@ -6,4 +6,4 @@
 
 ---
 
-It is currently in progress at http://127.0.0.1:4000/docs/studies/codingtest/1day1coding/.
+It is currently in progress at https://hoooon22.github.io/docs/studies/codingtest/1day1coding/.
