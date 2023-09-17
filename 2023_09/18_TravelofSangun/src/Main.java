@@ -20,25 +20,25 @@ public class Main {
             int N = Integer.parseInt(st.nextToken());
             int M = Integer.parseInt(st.nextToken());
 
-            // input
-            int[][] plane = new int[M][M];
+            // input & 인접 리스트
+            int[][] planes = new int[M][2]; // edge
 
-            for (int i = 0; i < M; i++) { // init
-                for (int j = 0; j < M; j++) {
-                    plane[i][j] = 0;
-                }
-            }
             for (int i = 0; i < M; i++) {
                 st = new StringTokenizer(br.readLine());
-                int x = Integer.parseInt(st.nextToken());
-                int y = Integer.parseInt(st.nextToken());
-
-                plane[x][y] = 1;
-                plane[y][x] = 1;
+                planes[i][0] = Integer.parseInt(st.nextToken());
+                planes[i][1] = Integer.parseInt(st.nextToken());
             }
 
-            // cal
+            ArrayList<Integer>[] list = new ArrayList[M];
             
+            for (int i = 0; i < M; i++) list[i] = new ArrayList<>();
+
+            for(int[] plane : planes) {
+                list[plane[0]].add(plane[1]);
+                list[plane[1]].add(plane[0]);
+            }
+
+            // 
         }
 
 
